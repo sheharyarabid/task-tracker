@@ -10,7 +10,7 @@ import { Task } from '../../Task';
   styleUrl: './tasks-item.component.css'
 })
 export class TasksItemComponent implements OnInit{
-  @Input() task! :Task;
+  @Input() task! :Task;  //the '!' disables strick initialization  for task
 
   constructor() {
 
