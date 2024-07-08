@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Task } from '../../Task';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -11,12 +11,16 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
   styleUrl: './tasks-item.component.css'
 })
 export class TasksItemComponent implements OnInit{
-  @Input() task! :Task;  //the '!' disables strick initialization  for task
+  @Input() task! :Task;  //the '!' disables strick initialization  for task variable.
+  @Output() onDeleteTask : EventEmitter<Task> = new EventEmitter();
   faTimes = faTimes;
   constructor() {
 
   }
-
+  onDelete(task: Task) {
+    console.log(`Delete method called for task id: ${task.id} and title: ${task.text} `);
+    this.onDeleteTask.emit(task);
+  }
   ngOnInit(): void {
     
   }
