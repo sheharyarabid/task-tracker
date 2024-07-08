@@ -13,10 +13,16 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 export class TasksItemComponent implements OnInit{
   @Input() task! :Task;  //the '!' disables strick initialization  for task variable.
   @Output() onDeleteTask : EventEmitter<Task> = new EventEmitter();
+  @Output() onToggleReminder: EventEmitter<Task> = new EventEmitter();
+
   faTimes = faTimes;
   constructor() {
 
   }
+  onToggle(task: Task) {
+    this.onToggleReminder.emit(task);
+  }
+
   onDelete(task: Task) {
     console.log(`Delete method called for task id: ${task.id} and title: ${task.text} `);
     this.onDeleteTask.emit(task);
@@ -24,4 +30,5 @@ export class TasksItemComponent implements OnInit{
   ngOnInit(): void {
     
   }
+
 }

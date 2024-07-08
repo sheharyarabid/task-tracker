@@ -3,11 +3,11 @@ import { Task } from '../../Task';
 import { TaskService } from '../../services/task.service';
 import { CommonModule } from '@angular/common';
 import { TasksItemComponent } from '../tasks-item/tasks-item.component';
-
+import { AddTaskComponent } from '../add-task/add-task.component';
 @Component({
   selector: 'app-tasks',
   standalone: true,
-  imports: [CommonModule, TasksItemComponent],
+  imports: [CommonModule, TasksItemComponent, AddTaskComponent],
   templateUrl: './tasks.component.html',
   styleUrl: './tasks.component.css'
 })
@@ -29,6 +29,11 @@ export class TasksComponent implements OnInit{
         t.id !== task.id;        
       });
     });
+  }
+
+  ToggleReminder(task: Task) {
+    task.reminder =! task.reminder; //opposite the value
+    this.taskService.updateTaskReminder(task).subscribe();
   }
 
 }
