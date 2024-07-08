@@ -16,6 +16,5 @@ export class TaskService {
      
     //gets service from db.json
    return this.http.get<Task[]>(this.apiURL)
-    
   }
 }
