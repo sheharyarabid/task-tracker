@@ -8,13 +8,13 @@ import { ButtonComponent } from '../button/button.component';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent{
     title = 'Task Tracker';
 
     constructor() { }
   
-    ngOnInit(): void {
-    }
+    // ngOnInit(): void {
+    // }
     toggleAddTask = () => {
       console.log('toggle');
       
