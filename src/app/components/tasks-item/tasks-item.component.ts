@@ -24,7 +24,6 @@ export class TasksItemComponent implements OnInit{
   }
 
   onDelete(task: Task) {
-    console.log(`Delete method called for task id: ${task.id} and title: ${task.text} `);
     this.onDeleteTask.emit(task);
   }
   ngOnInit(): void {
