@@ -17,6 +17,12 @@
       "text": "Food Shopping",
       "day": "May 7th at 12:30pm",
       "reminder": true
+    },
+    {
+      "id": "7732",
+      "text": "Go to sleep",
+      "day": "Monday 8 July at 7pm",
+      "reminder": true
     }
   ]
 }
